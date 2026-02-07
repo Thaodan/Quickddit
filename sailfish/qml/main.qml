@@ -61,6 +61,10 @@ ApplicationWindow {
                 if (result === undefined) {
                     return;
                 }
+                if (/^https?:\/\/\S+\-silent.(mp4|avi|mkv|webm)/.test(result.url)) {
+                    /* Workaround that youtube-dl returns a url with -silent.suffix here */
+                    result.url = result.url.replace('-silent', '');
+                }
 
                 console.log(JSON.stringify(result,null,4))
                 info = result
