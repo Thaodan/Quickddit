@@ -104,7 +104,7 @@ ApplicationWindow {
                 return true;
             } else if (/^https?:\/\/(www\.)?bitchute\.com\/.+/.test(url)) {
                 return true;
-            } else if (/^https?:\/\/(www\.)?redgifs\.com\/.+/.test(url)) {
+            } else if (/^https?:\/\/((www|v[0-9])\.)?redgifs\.com\/.+/.test(url)) {
                 return true;
             } else {
                 return false;
