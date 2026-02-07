@@ -62,6 +62,11 @@ ApplicationWindow {
                     return;
                 }
 
+                if (/^https?:\/\/(\w+\.)?redgifs\.com\/.+/.test(result.url)) {
+                    /* Workaround that youtube-dl returns a url with -silent here */
+                    result.url = result.url.replace('-silent', '');
+                }
+
                 console.log(JSON.stringify(result,null,4))
                 info = result
                 videoInfo()
